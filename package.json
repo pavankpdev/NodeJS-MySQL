@@ -1,0 +1,23 @@
+{
+  "name": "duo_nodejs_WS_practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "joi": "^17.8.4",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js",
+    "build": "babel index.js -d dist",
+    "start": "npm run build && node dist/index.js"
+  }
+}
