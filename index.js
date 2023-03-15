@@ -1,12 +1,13 @@
 import dotenv from "dotenv"
 import express from "express"
 import {mysqlConnection} from './database/connectDB'
+import {promisifiedQueryWrapper} from './database/queryInstance'
 
 dotenv.config()
 const app = express()
 
-app.get("/", (req, res) => {
-    res.send("Hello KPPPP")
+app.post("/", async (req, res) => {
+    await promisifiedQueryWrapper('INSERT INTO test (id, name) VALUES (1, "Pavan")')
 })
 
 // Establishing DB connection
